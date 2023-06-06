@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Swiper Example</title>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Add your HTML content here -->
+        <div class="swiper-slide">
+          <p>welcome</p>
+          <!-- Add the content of your first HTML file here -->
+          <iframe src="test1.html"></iframe>
+        </div>
+        <div class="swiper-slide">
+          <!-- Add the content of your second HTML file here -->
+          <p>This is an example of a simple HTML page with one paragraph2.</p>
+          <iframe src="test2.html"></iframe>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <script>
+      // Initialize Swiper
+      var swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+</html>

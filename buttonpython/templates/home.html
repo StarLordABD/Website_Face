@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facial Recognition</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <h1>Facial Recognition</h1>
+    </header>
+    <main>
+      <section class="container">
+        <div class="content">
+          <h2>What is Facial Recognition?</h2>
+          <p>Facial recognition is a biometric technology used to analyze and recognize unique features of a person's face. These features are then used to identify or verify the person's identity. Facial recognition technology is used in various fields, such as security, law enforcement, and marketing.</p>
+          <button id="scanBtn">Scan Face</button>
+          <div id="countdown"></div> 
+          <div class="video-container">
+            <video width="600" height="400" controls>
+              <source src="/static/Clip.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>    
+        </div>   
+        <img src="{% static 'slider1.jpg'%}" alt="Facial Recognition">      
+      </section>
+    </main>
+    <footer>
+      <div class="social-media-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2023 Facial Recognition. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript">
+      function startCountdown() {
+        let timeLeft = 20;
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = timeLeft;
+        const intervalId = setInterval(() => {
+          timeLeft--;
+          countdownElement.innerHTML = timeLeft;
+          if (timeLeft === 0) {
+            clearInterval(intervalId);
+            alert("Facial recognition starting soon!");
+          }
+        }, 1000);
+      }
+      document.getElementById("scanBtn").addEventListener("click", () => {
+        window.location.href = "{% url 'script' %}";
+        startCountdown();
+      });
+    </script> 
+    
+    
+  </body>
+</html>
